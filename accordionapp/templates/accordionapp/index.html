@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion Scientist</title>
+</head>
+<body>
+    <h1>Accordion Charts</h1>
+    <div id="chart-container">
+        <!-- Your SVG code goes here -->
+        <svg width="300" height="500" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <rect width="300" height="500" fill="lightgray" />
+
+            <!-- Row 1 (12 buttons) -->
+            <circle cx="50" cy="50" r="10" fill="white" stroke="black" id="button1" onclick="toggleHighlight(this)" />
+            <circle cx="90" cy="50" r="10" fill="white" stroke="black" id="button2" onclick="toggleHighlight(this)" />
+            <!-- Add remaining buttons as needed -->
+
+            <!-- JavaScript for Toggle Highlight -->
+            <script>
+                function toggleHighlight(button) {
+                    if (button.getAttribute("fill") === "white") {
+                        button.setAttribute("fill", "red");
+                    } else {
+                        button.setAttribute("fill", "white");
+                    }
+                }
+            </script>
+        </svg>
+    </div>
+</body>
+</html>
