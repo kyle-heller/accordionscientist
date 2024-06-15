@@ -7,7 +7,7 @@
         .button { fill: white; stroke: black; stroke-width: 2; cursor: pointer; }
         .button.black { fill: black; stroke: black; stroke-width: 2; cursor: pointer; }
         .button.highlight { fill: blue; stroke: black; stroke-width: 2; }
-        .label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; dominant-baseline: middle; }
+        .label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; dominant-baseline: middle; pointer-events: none}
     </style>
 </head>
 <body>
@@ -221,17 +221,17 @@
     <circle cx="160" cy="40" r="20" class="button black" />
     <text x="160" y="40" class="label" fill="white">f♯</text>
     <circle cx="200" cy="40" r="20" class="button" />
-    <text x="200" y="40" class="label">a♯</text>
+    <text x="200" y="40" class="label">a</text>
     <circle cx="240" cy="40" r="20" class="button" />
-    <text x="240" y="40" class="label">c♯</text>
+    <text x="240" y="40" class="label">c</text>
     <circle cx="280" cy="40" r="20" class="button black" />
     <text x="280" y="40" class="label" fill="white">e♭</text>
     <circle cx="320" cy="40" r="20" class="button black" />
     <text x="320" y="40" class="label" fill="white">f♯</text>
     <circle cx="360" cy="40" r="20" class="button" />
-    <text x="360" y="40" class="label">a♯</text>
+    <text x="360" y="40" class="label">a</text>
     <circle cx="400" cy="40" r="20" class="button" />
-    <text x="400" y="40" class="label">c♯</text>
+    <text x="400" y="40" class="label">c</text>
     <circle cx="440" cy="40" r="20" class="button black" />
     <text x="440" y="40" class="label" fill="white">e♭</text>
     <circle cx="480" cy="40" r="20" class="button black" />
@@ -244,24 +244,24 @@
     <text x="60" y="80" class="label">b</text>
     <circle cx="100" cy="80" r="20" class="button" />
     <text x="100" y="80" class="label">d</text>
-    <circle cx="140" cy="80" r="20" class="button black" />
-    <text x="140" y="80" class="label" fill="white">f</text>
+    <circle cx="140" cy="80" r="20" class="button" />
+    <text x="140" y="80" class="label" >f</text>
     <circle cx="180" cy="80" r="20" class="button black" />
     <text x="180" y="80" class="label" fill="white">g♯</text>
     <circle cx="220" cy="80" r="20" class="button" />
     <text x="220" y="80" class="label">b</text>
     <circle cx="260" cy="80" r="20" class="button" />
     <text x="260" y="80" class="label">d</text>
-    <circle cx="300" cy="80" r="20" class="button black" />
-    <text x="300" y="80" class="label" fill="white">f</text>
+    <circle cx="300" cy="80" r="20" class="button" />
+    <text x="300" y="80" class="label" >f</text>
     <circle cx="340" cy="80" r="20" class="button black" />
     <text x="340" y="80" class="label" fill="white">g♯</text>
     <circle cx="380" cy="80" r="20" class="button" />
     <text x="380" y="80" class="label">b</text>
     <circle cx="420" cy="80" r="20" class="button" />
     <text x="420" y="80" class="label">d</text>
-    <circle cx="460" cy="80" r="20" class="button black" />
-    <text x="460" y="80" class="label" fill="white">f</text>
+    <circle cx="460" cy="80" r="20" class="button" />
+    <text x="460" y="80" class="label" >f</text>
 
     <!-- Row 2 -->
     <circle cx="0" cy="120" r="20" class="button" />
@@ -325,22 +325,65 @@
 </svg>
 
 <script>
-    // Function to toggle highlight on button click
-    function toggleHighlight(evt) {
-        const button = evt.target;
-        if (button.classList.contains('highlight')) {
-            button.classList.remove('highlight');
-        } else {
-            button.classList.add('highlight');
+    let isMouseDown = false;
+    let isHighlighting = false;
+
+    // Function to determine if we are highlighting or unhighlighting
+    function determineHighlightMode(evt) {
+        const button = evt.target.closest('.button');
+        if (button) {
+            isHighlighting = !button.classList.contains('highlight');
         }
     }
 
-    // Attach click event to all buttons
-    const buttons = document.querySelectorAll('.button');
-    buttons.forEach(button => {
-        button.addEventListener('click', toggleHighlight);
+    // Function to toggle highlight on button click
+    function toggleHighlight(evt) {
+        const button = evt.target.closest('.button');
+        if (button) {
+            button.classList.toggle('highlight');
+        }
+    }
+
+    // Function to apply highlight/unhighlight on mouseover when dragging
+    function applyHighlightOnDrag(evt) {
+        if (isMouseDown) {
+            const button = evt.target.closest('.button');
+            if (button) {
+                if (isHighlighting) {
+                    button.classList.add('highlight');
+                } else {
+                    button.classList.remove('highlight');
+                }
+            }
+        }
+    }
+
+    // Attach event listeners for mousedown, mouseover, and mouseup
+    document.addEventListener('mousedown', (evt) => {
+        isMouseDown = true;
+        determineHighlightMode(evt);
+        toggleHighlight(evt);
     });
+
+    document.addEventListener('mouseover', (evt) => {
+        applyHighlightOnDrag(evt);
+    });
+
+    document.addEventListener('mouseup', () => {
+        isMouseDown = false;
+    });
+
+    // Prevent default text selection behavior while dragging
+    document.addEventListener('mousedown', (evt) => evt.preventDefault());
+
+  const intervals = {
+    'C': ['1', 'm2', 'M2', 'm3', 'M3', 'P4', 'd5', 'P5', 'm6', 'M6', 'm7', 'M7'],
+    'C#': ['1', 'm2', 'M2', 'm3', 'M3', 'P4', 'd5', 'P5', 'm6', 'M6', 'm7', 'M7'],
+    // Add intervals for other notes
+};
 </script>
+
+
 
 </body>
 </html>
