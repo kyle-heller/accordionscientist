@@ -3,31 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <title>Accordion Scientist</title>
+    <style>
+        .button { fill: white; stroke: black; stroke-width: 2; cursor: pointer; }
+        .button.black { fill: black; stroke: black; stroke-width: 2; cursor: pointer; }
+        .button.highlight { fill: blue; stroke: black; stroke-width: 2; }
+        .label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; dominant-baseline: middle; }
+    </style>
 </head>
 <body>
     <h1>Accordion Charts</h1>
-    <div id="chart-container">
-        <!-- Your SVG code goes here -->
-        <svg width="300" height="500" xmlns="http://www.w3.org/2000/svg">
-            <!-- Background -->
-            <rect width="300" height="500" fill="lightgray" />
+<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(50, 50)">
+    <!-- Row 6 (Diminished Chords) -->
+    <circle cx="0" cy="0" r="20" class="button" />
+    <text x="0" y="0" class="label">F♯dim</text>
+    <circle cx="40" cy="0" r="20" class="button" />
+    <text x="40" y="0" class="label">Bdim</text>
+    <circle cx="80" cy="0" r="20" class="button" />
+    <text x="80" y="0" class="label">Edim</text>
+    <circle cx="120" cy="0" r="20" class="button" />
+    <text x="120" y="0" class="label">Adim</text>
+    <circle cx="160" cy="0" r="20" class="button" />
+    <text x="160" y="0" class="label">Ddim</text>
+    <circle cx="200" cy="0" r="20" class="button" />
+    <text x="200" y="0" class="label">Gdim</text>
+    <circle cx="240" cy="0" r="20" class="button black" />
+    <text x="240" y="0" class="label" fill="white">Cdim</text>
+    <circle cx="280" cy="0" r="20" class="button black" />
+    <text x="280" y="0" class="label" fill="white">Fdim</text>
+    <circle cx="320" cy="0" r="20" class="button" />
+    <text x="320" y="0" class="label">B♭dim</text>
+    <circle cx="360" cy="0" r="20" class="button" />
+    <text x="360" y="0" class="label">E♭dim</text>
+    <circle cx="400" cy="0" r="20" class="button" />
+    <text x="400" y="0" class="label">A♭dim</text>
+    <circle cx="440" cy="0" r="20" class="button" />
+    <text x="440" y="0" class="label">C♯dim</text>
 
-            <!-- Row 1 (12 buttons) -->
-            <circle cx="50" cy="50" r="10" fill="white" stroke="black" id="button1" onclick="toggleHighlight(this)" />
-            <circle cx="90" cy="50" r="10" fill="white" stroke="black" id="button2" onclick="toggleHighlight(this)" />
-            <!-- Add remaining buttons as needed -->
+    <!-- Row 5 (7 Chords) -->
+    <circle cx="20" cy="40" r="20" class="button" />
+    <text x="20" y="40" class="label">F♯7</text>
+    <circle cx="60" cy="40" r="20" class="button" />
+    <text x="60" y="40" class="label">B7</text>
+    <circle cx="100" cy="40" r="20" class="button" />
+    <text x="100" y="40" class="label">E7</text>
+    <circle cx="140" cy="40" r="20" class="button" />
+    <text x="140" y="40" class="label">A7</text>
+    <circle cx="180" cy="40" r="20" class="button" />
+    <text x="180" y="40" class="label">D7</text>
+    <circle cx="220" cy="40" r="20" class="button black" />
+    <text x="220" y="40" class="label" fill="white">G7</text>
+    <circle cx="260" cy="40" r="20" class="button black" />
+    <text x="260" y="40" class="label" fill="white">C7</text>
+    <circle cx="300" cy="40" r="20" class="button black" />
+    <text x="300" y="40" class="label" fill="white">F7</text>
+    <circle cx="340" cy="40" r="20" class="button" />
+    <text x="340" y="40" class="label">B♭7</text>
+    <circle cx="380" cy="40" r="20" class="button" />
+    <text x="380" y="40" class="label">E♭7</text>
+    <circle cx="420" cy="40" r="20" class="button" />
+    <text x="420" y="40" class="label">A♭7</text>
+    <circle cx="460" cy="40" r="20" class="button" />
+    <text x="460" y="40" class="label">C♯7</text>
 
-            <!-- JavaScript for Toggle Highlight -->
-            <script>
-                function toggleHighlight(button) {
-                    if (button.getAttribute("fill") === "white") {
-                        button.setAttribute("fill", "red");
-                    } else {
-                        button.setAttribute("fill", "white");
-                    }
-                }
-            </script>
-        </svg>
-    </div>
+    <!-- Row 4 (Minor Chords) -->
+    <circle cx="40" cy="80" r="20" class="button" />
+    <text x="40" y="80" class="label">F♯m</text>
+    <circle cx="80" cy="80" r="20" class="button" />
+    <text x="80" y="80" class="label">Bm</text>
+    <circle cx="120" cy="80" r="20" class="button" />
+    <text x="120" y="80" class="label">Em</text>
+    <circle cx="160" cy="80" r="20" class="button" />
+    <text x="160" y="80" class="label">Am</text>
+    <circle cx="200" cy="80" r="20" class="button black" />
+    <text x="200" y="80" class="label" fill="white">Dm</text>
+    <circle cx="240" cy="80" r="20" class="button black" />
+    <text x="240" y="80" class="label" fill="white">Gm</text>
+    <circle cx="280" cy="80" r="20" class="button black" />
+    <text x="280" y="80" class="label" fill="white">Cm</text>
+    <circle cx="320" cy="80" r="20" class="button black" />
+    <text x="320" y="80" class="label" fill="white">Fm</text>
+    <circle cx="360" cy="80" r="20" class="button" />
+    <text x="360" y="80" class="label">B♭m</text>
+    <circle cx="400" cy="80" r="20" class="button" />
+    <text x="400" y="80" class="label">E♭m</text>
+    <circle cx="440" cy="80" r="20" class="button" />
+    <text x="440" y="80" class="label">A♭m</text>
+    <circle cx="480" cy="80" r="20" class="button" />
+    <text x="480" y="80" class="label">C♯m</text>
+
+    <!-- Row 3 (Major Chords) -->
+    <circle cx="60" cy="120" r="20" class="button" />
+    <text x="60" y="120" class="label">F♯M</text>
+    <circle cx="100" cy="120" r="20" class="button" />
+    <text x="100" y="120" class="label">BM</text>
+    <circle cx="140" cy="120" r="20" class="button" />
+    <text x="140" y="120" class="label">EM</text>
+    <circle cx="180" cy="120" r="20" class="button black" />
+    <text x="180" y="120" class="label" fill="white">AM</text>
+    <circle cx="220" cy="120" r="20" class="button black" />
+    <text x="220" y="120" class="label" fill="white">DM</text>
+    <circle cx="260" cy="120" r="20" class="button" />
+    <text x="260" y="120" class="label">GM</text>
+    <circle cx="300" cy="120" r="20" class="button black" />
+    <text x="300" y="120" class="label" fill="white">CM</text>
+    <circle cx="340" cy="120" r="20" class="button black" />
+    <text x="340" y="120" class="label" fill="white">FM</text>
+    <circle cx="380" cy="120" r="20" class="button" />
+    <text x="380" y="120" class="label">B♭M</text>
+    <circle cx="420" cy="120" r="20" class="button" />
+    <text x="420" y="120" class="label">E♭M</text>
+    <circle cx="460" cy="120" r="20" class="button" />
+    <text x="460" y="120" class="label">A♭M</text>
+    <circle cx="500" cy="120" r="20" class="button" />
+    <text x="500" y="120" class="label">C♯M</text>
+
+    <!-- Row 2 (Counter Bass) -->
+    <circle cx="80" cy="160" r="20" class="button" />
+    <text x="80" y="160" class="label">F♯3</text>
+    <circle cx="120" cy="160" r="20" class="button" />
+    <text x="120" y="160" class="label">B3</text>
+    <circle cx="160" cy="160" r="20" class="button black" />
+    <text x="160" y="160" class="label" fill="white">E3</text>
+    <circle cx="200" cy="160" r="20" class="button black" />
+    <text x="200" y="160" class="label" fill="white">A3</text>
+    <circle cx="240" cy="160" r="20" class="button" />
+    <text x="240" y="160" class="label">D3</text>
+    <circle cx="280" cy="160" r="20" class="button" />
+    <text x="280" y="160" class="label">G3</text>
+    <circle cx="320" cy="160" r="20" class="button black" />
+    <text x="320" y="160" class="label" fill="white">C3</text>
+    <circle cx="360" cy="160" r="20" class="button black" />
+    <text x="360" y="160" class="label" fill="white">F3</text>
+    <circle cx="400" cy="160" r="20" class="button" />
+    <text x="400" y="160" class="label">B♭3</text>
+    <circle cx="440" cy="160" r="20" class="button" />
+    <text x="440" y="160" class="label">E♭3</text>
+    <circle cx="480" cy="160" r="20" class="button" />
+    <text x="480" y="160" class="label">A♭3</text>
+    <circle cx="520" cy="160" r="20" class="button" />
+    <text x="520" y="160" class="label">C♯3</text>
+
+    <!-- Row 1 (Bass buttons) -->
+    <circle cx="100" cy="200" r="20" class="button" />
+    <text x="100" y="200" class="label">B♭3</text>
+    <circle cx="140" cy="200" r="20" class="button black" />
+    <text x="140" y="200" class="label" fill="white">E♭3</text>
+    <circle cx="180" cy="200" r="20" class="button black" />
+    <text x="180" y="200" class="label" fill="white">A♭3</text>
+    <circle cx="220" cy="200" r="20" class="button" />
+    <text x="220" y="200" class="label">C♯3</text>
+    <circle cx="260" cy="200" r="20" class="button" />
+    <text x="260" y="200" class="label">F♯3</text>
+    <circle cx="300" cy="200" r="20" class="button" />
+    <text x="300" y="200" class="label">B3</text>
+    <circle cx="340" cy="200" r="20" class="button black" />
+    <text x="340" y="200" class="label" fill="white">E3</text>
+    <circle cx="380" cy="200" r="20" class="button black" />
+    <text x="380" y="200" class="label" fill="white">A3</text>
+    <circle cx="420" cy="200" r="20" class="button" />
+    <text x="420" y="200" class="label">D3</text>
+    <circle cx="460" cy="200" r="20" class="button" />
+    <text x="460" y="200" class="label">G3</text>
+    <circle cx="500" cy="200" r="20" class="button" />
+    <text x="500" y="200" class="label">C3</text>
+    <circle cx="540" cy="200" r="20" class="button" />
+    <text x="540" y="200" class="label">F3</text>
+  </g>
+</svg>
+
+<svg width="800" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .button { fill: white; stroke: black; stroke-width: 2; cursor: pointer; }
+    .button.black { fill: black; stroke: black; stroke-width: 2; cursor: pointer; }
+    .button.highlight { fill: teal ; stroke: black; stroke-width: 2; }
+    .label { font-family: Arial, sans-serif; font-size: 14px; text-anchor: middle; dominant-baseline: middle; }
+    .duplicate-line { stroke: black; stroke-width: 1; }
+  </style>
+
+  <!-- Define positions for each row and column -->
+  <g transform="translate(50, 50)">
+    <!-- Row 5 -->
+    <circle cx="20" cy="0" r="20" class="button" />
+    <text x="20" y="0" class="label">g</text>
+    <circle cx="60" cy="0" r="20" class="button black" />
+    <text x="60" y="0" class="label" fill="white">a♯</text>
+    <circle cx="100" cy="0" r="20" class="button black" />
+    <text x="100" y="0" class="label" fill="white">c♯</text>
+    <circle cx="140" cy="0" r="20" class="button" />
+    <text x="140" y="0" class="label">e</text>
+    <circle cx="180" cy="0" r="20" class="button" />
+    <text x="180" y="0" class="label">g</text>
+    <circle cx="220" cy="0" r="20" class="button black" />
+    <text x="220" y="0" class="label" fill="white">a♯</text>
+    <circle cx="260" cy="0" r="20" class="button black" />
+    <text x="260" y="0" class="label" fill="white">c♯</text>
+    <circle cx="300" cy="0" r="20" class="button" />
+    <text x="300" y="0" class="label">e</text>
+    <circle cx="340" cy="0" r="20" class="button" />
+    <text x="340" y="0" class="label">g</text>
+    <circle cx="380" cy="0" r="20" class="button black" />
+    <text x="380" y="0" class="label" fill="white">a♯</text>
+    <circle cx="420" cy="0" r="20" class="button black" />
+    <text x="420" y="0" class="label" fill="white">c♯</text>
+    <circle cx="460" cy="0" r="20" class="button" />
+    <text x="460" y="0" class="label">e</text>
+
+    <!-- Row 4 -->
+    <circle cx="0" cy="40" r="20" class="button black" />
+    <text x="0" y="40" class="label" fill="white">f♯</text>
+    <circle cx="40" cy="40" r="20" class="button" />
+    <text x="40" y="40" class="label">a</text>
+    <circle cx="80" cy="40" r="20" class="button" />
+    <text x="80" y="40" class="label">c</text>
+    <circle cx="120" cy="40" r="20" class="button black" />
+    <text x="120" y="40" class="label" fill="white">e♭</text>
+    <circle cx="160" cy="40" r="20" class="button black" />
+    <text x="160" y="40" class="label" fill="white">f♯</text>
+    <circle cx="200" cy="40" r="20" class="button" />
+    <text x="200" y="40" class="label">a♯</text>
+    <circle cx="240" cy="40" r="20" class="button" />
+    <text x="240" y="40" class="label">c♯</text>
+    <circle cx="280" cy="40" r="20" class="button black" />
+    <text x="280" y="40" class="label" fill="white">e♭</text>
+    <circle cx="320" cy="40" r="20" class="button black" />
+    <text x="320" y="40" class="label" fill="white">f♯</text>
+    <circle cx="360" cy="40" r="20" class="button" />
+    <text x="360" y="40" class="label">a♯</text>
+    <circle cx="400" cy="40" r="20" class="button" />
+    <text x="400" y="40" class="label">c♯</text>
+    <circle cx="440" cy="40" r="20" class="button black" />
+    <text x="440" y="40" class="label" fill="white">e♭</text>
+    <circle cx="480" cy="40" r="20" class="button black" />
+    <text x="480" y="40" class="label" fill="white">f♯</text>
+
+    <!-- Row 3 -->
+    <circle cx="20" cy="80" r="20" class="button black" />
+    <text x="20" y="80" class="label" fill="white">g♯</text>
+    <circle cx="60" cy="80" r="20" class="button" />
+    <text x="60" y="80" class="label">b</text>
+    <circle cx="100" cy="80" r="20" class="button" />
+    <text x="100" y="80" class="label">d</text>
+    <circle cx="140" cy="80" r="20" class="button black" />
+    <text x="140" y="80" class="label" fill="white">f</text>
+    <circle cx="180" cy="80" r="20" class="button black" />
+    <text x="180" y="80" class="label" fill="white">g♯</text>
+    <circle cx="220" cy="80" r="20" class="button" />
+    <text x="220" y="80" class="label">b</text>
+    <circle cx="260" cy="80" r="20" class="button" />
+    <text x="260" y="80" class="label">d</text>
+    <circle cx="300" cy="80" r="20" class="button black" />
+    <text x="300" y="80" class="label" fill="white">f</text>
+    <circle cx="340" cy="80" r="20" class="button black" />
+    <text x="340" y="80" class="label" fill="white">g♯</text>
+    <circle cx="380" cy="80" r="20" class="button" />
+    <text x="380" y="80" class="label">b</text>
+    <circle cx="420" cy="80" r="20" class="button" />
+    <text x="420" y="80" class="label">d</text>
+    <circle cx="460" cy="80" r="20" class="button black" />
+    <text x="460" y="80" class="label" fill="white">f</text>
+
+    <!-- Row 2 -->
+    <circle cx="0" cy="120" r="20" class="button" />
+    <text x="0" y="120" class="label">g</text>
+    <circle cx="40" cy="120" r="20" class="button black" />
+    <text x="40" y="120" class="label" fill="white">a♯</text>
+    <circle cx="80" cy="120" r="20" class="button black" />
+    <text x="80" y="120" class="label" fill="white">c♯</text>
+    <circle cx="120" cy="120" r="20" class="button" />
+    <text x="120" y="120" class="label">e</text>
+    <circle cx="160" cy="120" r="20" class="button" />
+    <text x="160" y="120" class="label">g</text>
+    <circle cx="200" cy="120" r="20" class="button black" />
+    <text x="200" y="120" class="label" fill="white">a♯</text>
+    <circle cx="240" cy="120" r="20" class="button black" />
+    <text x="240" y="120" class="label" fill="white">c♯</text>
+    <circle cx="280" cy="120" r="20" class="button" />
+    <text x="280" y="120" class="label">e</text>
+    <circle cx="320" cy="120" r="20" class="button" />
+    <text x="320" y="120" class="label">g</text>
+    <circle cx="360" cy="120" r="20" class="button black" />
+    <text x="360" y="120" class="label" fill="white">a♯</text>
+    <circle cx="400" cy="120" r="20" class="button black" />
+    <text x="400" y="120" class="label" fill="white">c♯</text>
+    <circle cx="440" cy="120" r="20" class="button" />
+    <text x="440" y="120" class="label">e</text>
+    <circle cx="480" cy="120" r="20" class="button" />
+    <text x="480" y="120" class="label">g</text>
+
+    <!-- Row 1 -->
+    <circle cx="20" cy="160" r="20" class="button" />
+    <text x="20" y="160" class="label">a</text>
+    <circle cx="60" cy="160" r="20" class="button" />
+    <text x="60" y="160" class="label">c</text>
+    <circle cx="100" cy="160" r="20" class="button black" />
+    <text x="100" y="160" class="label" fill="white">e♭</text>
+    <circle cx="140" cy="160" r="20" class="button black" />
+    <text x="140" y="160" class="label" fill="white">f♯</text>
+    <circle cx="180" cy="160" r="20" class="button" />
+    <text x="180" y="160" class="label">a</text>
+    <circle cx="220" cy="160" r="20" class="button" />
+    <text x="220" y="160" class="label">c</text>
+    <circle cx="260" cy="160" r="20" class="button black" />
+    <text x="260" y="160" class="label" fill="white">e♭</text>
+    <circle cx="300" cy="160" r="20" class="button black" />
+    <text x="300" y="160" class="label" fill="white">f♯</text>
+    <circle cx="340" cy="160" r="20" class="button" />
+    <text x="340" y="160" class="label">a</text>
+    <circle cx="380" cy="160" r="20" class="button" />
+    <text x="380" y="160" class="label">c</text>
+    <circle cx="420" cy="160" r="20" class="button black" />
+    <text x="420" y="160" class="label" fill="white">e♭</text>
+    <circle cx="460" cy="160" r="20" class="button black" />
+    <text x="460" y="160" class="label" fill="white">f♯</text>
+
+  </g>
+
+  <!-- Add duplicate indicators -->
+  <!-- <line x1="180" y1="50" x2="180" y2="90" class="duplicate-line" /> -->
+  <!-- Add more lines as needed -->
+</svg>
+
+<script>
+    // Function to toggle highlight on button click
+    function toggleHighlight(evt) {
+        const button = evt.target;
+        if (button.classList.contains('highlight')) {
+            button.classList.remove('highlight');
+        } else {
+            button.classList.add('highlight');
+        }
+    }
+
+    // Attach click event to all buttons
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.addEventListener('click', toggleHighlight);
+    });
+</script>
+
 </body>
 </html>
